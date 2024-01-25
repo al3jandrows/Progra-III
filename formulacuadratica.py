@@ -1,16 +1,18 @@
 import cmath
 
-def formulacuadratica(a, b, c):
+def calcular_raices_cuadraticas(a, b, c):
+    # Calcula el discriminante
     discriminante = cmath.sqrt(b**2 - 4*a*c)
-    x1 = (-b + discriminante) / (2*a)
-    x2 = (-b - discriminante) / (2*a)
-    return x1, x2
 
-try:
-    a = float(input("Ingrese el valor de a: "))
-    b = float(input("Ingrese el valor de b: "))
-    c = float(input("Ingrese el valor de c: "))
-    soluciones = formulacuadratica(a, b, c)
-    print(f"Las dos respuestas son {soluciones}")
-except ValueError:
-    print("Error: Ingrese valores numéricos para a, b y c.")
+    # Calcula las dos soluciones
+    raiz1 = (-b + discriminante) / (2*a)
+    raiz2 = (-b - discriminante) / (2*a)
+
+    return raiz1, raiz2
+
+# Ingresa los coeficientes de la ecuación cuadrática
+a = float(input("Ingrese el coeficiente a: "))
+b = float(input("Ingrese el coeficiente b: "))
+c = float(input("Ingrese el coeficiente c: "))
+raiz1, raiz2 = calcular_raices_cuadraticas(a, b, c)
+print(f"Las raíces son: {raiz1} y {raiz2}")

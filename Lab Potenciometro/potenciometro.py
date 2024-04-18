@@ -21,6 +21,15 @@ def turn_on_circle(circle, color):
 def turn_off_circle(circle):
     canvas.itemconfig(circle, fill="white")
 
+def paint_white():
+    canvas.create_rectangle(200, 215, 225, 230, fill='white')
+def paint_white2():
+    canvas.create_rectangle(200, 235, 225, 250, fill='white')
+    
+def paint_white3():
+    canvas.create_rectangle(200, 255, 225, 270, fill='white')
+
+
 # Función para manejar los datos recibidos del puerto serie
 def handle_code(code):
     try:
@@ -32,21 +41,27 @@ def handle_code(code):
 
         # Encender el círculo correspondiente al código recibido
         if digit == 1:
-            turn_on_circle(circles[0], "yellow")
-            canvas.itemconfig(small_rectangle, fill="green")
-            root.after(100, lambda: canvas.itemconfig(small_rectangle, fill="white"))
+            turn_on_circle(circles[0], "yellow")    
         elif digit == 2:
-            turn_on_circle(circles[1], "green")
-            canvas.itemconfig(small_rectangle2, fill="green")
-            root.after(100, lambda: canvas.itemconfig(small_rectangle2, fill="white"))
+            turn_on_circle(circles[1], "green")     
         elif digit == 3:
-            turn_on_circle(circles[2], "red")
-            canvas.itemconfig(small_rectangle3, fill="green")
-            root.after(100, lambda: canvas.itemconfig(small_rectangle3, fill="white"))
+            turn_on_circle(circles[2], "red")    
+
+        if digit==5:    
+            canvas.create_rectangle(200, 215, 225, 230, fill='green')    
+        elif digit==6:
+              canvas.create_rectangle(200, 235, 225, 250, fill='green')       
+        elif digit==7:
+            canvas.create_rectangle(200, 255, 225, 270, fill='green')    
+        elif digit==8:
+            canvas.create_rectangle(200, 215, 225, 230, fill='white')
+            canvas.create_rectangle(200, 235, 225, 250, fill='white')
+            canvas.create_rectangle(200, 255, 225, 270, fill='white')
         # Actualizar el valor de la barra de potenciómetro
         update_bar_graph(digit)
     except ValueError:
         print("Mensaje desde Arduino:", code)
+        
 
 # Función para actualizar la barra de potenciómetro
 def update_bar_graph(value):

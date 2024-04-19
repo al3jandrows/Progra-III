@@ -50,9 +50,9 @@ def handle_code(code):
         if digit==5:    
             canvas.create_rectangle(200, 215, 225, 230, fill='green')    
         elif digit==6:
-              canvas.create_rectangle(200, 235, 225, 250, fill='green')       
+             canvas.create_rectangle(200, 255, 225, 270, fill='green')    
         elif digit==7:
-            canvas.create_rectangle(200, 255, 225, 270, fill='green')    
+            canvas.create_rectangle(200, 235, 225, 250, fill='green')      
         elif digit==8:
             canvas.create_rectangle(200, 215, 225, 230, fill='white')
             canvas.create_rectangle(200, 235, 225, 250, fill='white')
@@ -77,7 +77,7 @@ def update_bar_graph(value):
 
 # Configuración de la ventana de Tkinter
 root = tk.Tk()
-root.title("Botón Controlador")
+root.title("Segundo Parcial Progra")
 root.geometry("1000x500")  # Ajustar el tamaño de la ventana
 
 # Configuración de la gráfica de barras
